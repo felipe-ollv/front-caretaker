@@ -1,54 +1,23 @@
-import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, ScrollView, Alert } from 'react-native';
-// import DateTimePicker from '@react-native-community/datetimepicker';
-// import { Picker } from '@react-native-picker/picker';
+import InputComponent from '@/components/input';
+import React from 'react';
+import { Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native';
+
 
 const Task = () => {
-
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      {/* Título */}
-      <Text style={styles.label}>Título *</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Digite o título da tarefa"
-        value={'title'}
-        // onChangeText={setTitle}
-      />
+      
+      <InputComponent />
 
       {/* Descrição */}
-      <Text style={styles.label}>Descrição *</Text>
-      <TextInput
-        style={[styles.input, styles.multilineInput]}
-        placeholder="Digite a descrição da tarefa"
-        value={'description'}
-        // onChangeText={setDescription}
-        multiline
-      />
+      <InputComponent />
 
-      {/* Quem criou */}
-      <Text style={styles.label}>Quem criou *</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Digite o nome do criador"
-        value={'createdBy'}
-        // onChangeText={setCreatedBy}
-      />
+      {/* para o proprio ou da familia, trabalho etc ...*/}
+      <InputComponent />
 
-      {/* Status */}
-      <Text style={styles.label}>Status *</Text>
-      {/* <Picker
-        selectedValue={status}
-        onValueChange={(itemValue) => setStatus(itemValue)}
-        style={styles.picker}
-      >
-        <Picker.Item label="Pendente" value="pendente" />
-        <Picker.Item label="Concluída" value="concluída" />
-        <Picker.Item label="Fechada" value="fechada" />
-      </Picker> */}
-
-      {/* Botão de enviar
-      <Button title="Adicionar Tarefa" onPress={handleSubmit} /> */}
+      <TouchableOpacity style={[styles.button, styles.logoutButton]}>
+        <Text style={styles.buttonText}>Salvar atividade</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
@@ -56,34 +25,23 @@ const Task = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 20,
+    gap: 16
   },
-  label: {
+  button: {
+    width: '100%',
+    padding: 15,
+    backgroundColor: '#708090',
+    borderRadius: 16,
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  logoutButton: {
+    backgroundColor: '#4682B4',
+  },
+  buttonText: {
+    color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
-    marginTop: 10,
-    marginBottom: 5,
-  },
-  input: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    padding: 10,
-    marginBottom: 15,
-  },
-  multilineInput: {
-    height: 100,
-    textAlignVertical: 'top',
-  },
-  dateText: {
-    fontSize: 16,
-    marginBottom: 15,
-    textAlign: 'center',
-  },
-  picker: {
-    borderWidth: 1,
-    borderColor: '#ccc',
-    borderRadius: 5,
-    marginBottom: 20,
   },
 });
 
