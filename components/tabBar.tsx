@@ -60,13 +60,13 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
                 onLongPress={onLongPress}
               >
                 {
-                    icons[route.name]({
-                        color: isFocused ? primaryColor : greyColor
-                    })
+                  icons[route.name]({
+                      color: isFocused ? primaryColor : greyColor
+                  })
                 }
                 <Text style={{ 
-                    color: isFocused ? primaryColor : greyColor,
-                    fontSize: 11 
+                  color: isFocused ? primaryColor : greyColor,
+                  fontSize: 11 
                 }}>
                   {label}
                 </Text>
@@ -78,28 +78,28 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 }
 
 const styles = StyleSheet.create({
-    tabbar: {
-        position: 'absolute',
-        bottom: 10,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        backgroundColor: 'white',
-        marginHorizontal: 20,
-        paddingVertical: 15,
-        borderRadius: 25,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.1,
-        shadowRadius: 2,  
-        elevation: 5
-    },
-    tabbaritem: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 4
-    }
+  tabbar: {
+    position: 'absolute',
+    bottom: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    marginHorizontal: 12,
+    paddingVertical: 15,
+    borderRadius: 25,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.1,
+    shadowRadius: 2,  
+    elevation: 5
+  },
+  tabbaritem: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    gap: 4
+  }
 })
 
 export default TabBar

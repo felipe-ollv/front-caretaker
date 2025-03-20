@@ -17,7 +17,7 @@ const _layout = () => {
       <Tabs.Screen
         name="task"
         options={{
-          title: "Tarefa",
+          title: "Atividade",
           headerShown: false,
         }}
       />

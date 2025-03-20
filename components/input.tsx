@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet, TextInputProps } from 'react-native';
 
-const InputComponent = () => {
+const InputComponent = ({ placeholder, inputMode, }: TextInputProps) => {
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => setIsFocused(true);
@@ -13,7 +13,8 @@ const InputComponent = () => {
         style={{ flex: 1 }} 
         onFocus={handleFocus}
         onBlur={handleBlur}
-        placeholder="Digite seu nome"
+        placeholder={placeholder}
+        inputMode={inputMode}
       />
     </View>
   );

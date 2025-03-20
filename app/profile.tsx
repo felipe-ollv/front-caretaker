@@ -32,8 +32,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    padding: 20,
+    justifyContent: 'center',
+    paddingHorizontal: 12,
   },
   profileImageCss: {
     width: 200,
