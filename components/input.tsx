@@ -10,7 +10,6 @@ const InputComponent = ({ placeholder, inputMode, }: TextInputProps) => {
   return (
     <View style={[styles.input, isFocused && styles.inputFocused]}>
       <TextInput
-        style={{ flex: 1 }} 
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder={placeholder}

@@ -1,11 +1,12 @@
+import Header from '@/components/header'
 import InputComponent from '@/components/input'
 import React from 'react'
 import { Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
 
-
 const Task = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <Header />
       <InputComponent placeholder='Título da atividade' inputMode='text'/>
       <InputComponent placeholder='Uma breve descrição da atividade' inputMode='text'/>
       <InputComponent />

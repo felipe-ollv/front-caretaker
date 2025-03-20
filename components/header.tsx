@@ -2,15 +2,15 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 
 const Header = () => {
-    return (
-			<View>
-				<View style={styles.header}>
-					<Text>Olá,</Text>
-					<Text style={styles.username}>Felipe Oliveira</Text>
-				</View>
-				<Text style={styles.useractivities}>Suas atividades para hoje!</Text>
+	return (
+		<View>
+			<View style={styles.header}>
+				<Text>Olá,</Text>
+				<Text style={styles.username}>Felipe Oliveira</Text>
 			</View>
-    )
+			<Text style={styles.useractivities}>Suas atividades para hoje!</Text>
+		</View>
+	)
 }
 
 const styles = StyleSheet.create({
