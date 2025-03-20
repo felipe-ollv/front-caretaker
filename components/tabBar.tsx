@@ -1,13 +1,15 @@
 import React from "react"
 import { Text, TouchableOpacity, View, StyleSheet } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
+import { BottomTabBarProps } from "@react-navigation/bottom-tabs"
 
-const TabBar = ({ state, descriptors, navigation }) => {
+const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 
-    const icons = {
+    const icons: any = {
         index: (props: any) => <AntDesign name="home" size={26} color={greyColor} {...props}/>,
         profile: (props: any) => <AntDesign name="user" size={26} color={greyColor} {...props}/>,
-        task: (props: any) => <AntDesign name="plus" size={26} color={greyColor} {...props}/>
+        task: (props: any) => <AntDesign name="plus" size={26} color={greyColor} {...props}/>,
+        menu: (props: any) => <AntDesign name="menufold" size={26} color={greyColor} {...props}/>
     }
 
     const primaryColor = '#0891b2'
@@ -15,7 +17,7 @@ const TabBar = ({ state, descriptors, navigation }) => {
 
     return (
         <View style={styles.tabbar}>
-          {state.routes.map((route, index) => {
+          {state.routes.map((route: any, index: number) => {
             const { options } = descriptors[route.key];
             const label =
               options.tabBarLabel !== undefined
@@ -78,7 +80,7 @@ const TabBar = ({ state, descriptors, navigation }) => {
 const styles = StyleSheet.create({
     tabbar: {
         position: 'absolute',
-        bottom: 18,
+        bottom: 28,
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
