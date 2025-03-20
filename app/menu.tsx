@@ -1,18 +1,11 @@
 import React from "react"
-import Card from "@/components/card"
 import { StyleSheet, SafeAreaView, ScrollView, Text } from "react-native"
 
-const Home = () => {
+const Menu = () => {
   return (
     <SafeAreaView style={styles.container}>
         <ScrollView contentContainerStyle={{ paddingBottom: 120 }}>
-            {/* <Text >Tarefas do dia</Text> */}
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <Text>Menu</Text>
       </ScrollView>
     </SafeAreaView>
   )
@@ -24,4 +17,4 @@ const styles = StyleSheet.create({
   },
 })
 
-export default Home
+export default Menu
