@@ -3,6 +3,8 @@ import { Text, TouchableOpacity, View, StyleSheet } from "react-native"
 import { AntDesign } from "@expo/vector-icons"
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs"
 
+import rt from "@/assets/json/routes-excluded.json"
+
 const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
 
     const icons: any = {
@@ -26,7 +28,7 @@ const TabBar = ({ state, descriptors, navigation }: BottomTabBarProps) => {
                   ? options.title
                   : route.name;
             
-            if(['_sitemap', '+not-found'].includes(route.name)) return null
+            if(rt.routes.includes(route.name)) return null
     
             const isFocused = state.index === index;
     

@@ -7,6 +7,7 @@ import {
   FlatList,
 } from "react-native"
 import Header from "@/components/header"
+import { router } from "expo-router"
 
 const cardTaskData = [
   {
@@ -71,7 +72,7 @@ const Home = () => {
             const isLastItem = index === cardTaskData.length - 1
             return (
               <TouchableOpacity
-                onPress={() => console.log("Click Card", item)}
+                onPress={() => router.push('/(tabs)/details')}
                 activeOpacity={0.9}
                 style={isLastItem ? styles.lastitem : null}
               >

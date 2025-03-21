@@ -12,7 +12,7 @@ const _layout = () => {
         options={{
           title: "Início",
           headerShown: false,
-        }} 
+        }}
       />
       <Tabs.Screen
         name="task"
@@ -33,6 +33,14 @@ const _layout = () => {
         options={{
           title: "Menu",
           headerShown: false,
+        }} 
+      />
+      <Tabs.Screen
+        name="details"
+        options={{
+          title: "Detalhes da atividade",
+          headerShown: false,
+          tabBarButton: () => null
         }} 
       />
     </Tabs>

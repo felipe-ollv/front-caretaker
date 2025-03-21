@@ -5,7 +5,7 @@ const Profile = () => {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../assets/images/11539820.png')}
+        source={require('../../assets/images/11539820.png')}
         style={styles.profileImageCss}
       />
 

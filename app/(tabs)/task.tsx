@@ -1,11 +1,11 @@
 import Header from '@/components/header'
 import InputComponent from '@/components/input'
 import React from 'react'
-import { Text, StyleSheet, ScrollView, TouchableOpacity } from 'react-native'
+import { Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
 
 const Task = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <SafeAreaView style={styles.container}>
       <Header userName='Felipe Oliveira' headerText='Aqui você cria uma atividade!'/>
       <InputComponent placeholder='Título da atividade' inputMode='text'/>
       <InputComponent placeholder='Uma breve descrição da atividade' inputMode='text'/>
@@ -13,7 +13,7 @@ const Task = () => {
       <TouchableOpacity style={[styles.button, styles.logoutButton]}>
         <Text style={styles.buttonText}>Salvar atividade</Text>
       </TouchableOpacity>
-    </ScrollView>
+    </SafeAreaView>
   )
 }
 

@@ -1,0 +1,7 @@
+{
+    "routes": [
+        "+not-found",
+        "_sitemap",
+        "details"
+    ]
+}
