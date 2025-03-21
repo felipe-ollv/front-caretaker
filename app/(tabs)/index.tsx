@@ -9,6 +9,8 @@ import {
 import Header from "@/components/header"
 import { router } from "expo-router"
 
+import rt from "@/assets/json/app-text.json"
+
 const cardTaskData = [
   {
     title: 'Passear com o pet',
@@ -64,7 +66,7 @@ const cardTaskData = [
 const Home = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header userName="Felipe Oliveira" headerText="Aqui estão suas atividades do dia, não deixe para depois!"/>
+      <Header userName="Felipe Oliveira" headerText={rt.home.headertext}/>
 
         <FlatList 
           data={cardTaskData}

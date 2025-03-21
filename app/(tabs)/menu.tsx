@@ -1,12 +1,13 @@
 import Header from "@/components/header"
 import React from "react"
 import { StyleSheet, SafeAreaView, ScrollView, Text, View, TouchableOpacity } from "react-native"
+import rt from "@/assets/json/app-text.json"
 
 const Menu = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ paddingBottom: 120, flex: 1 }}>
-        <Header userName="Felipe Oliveira" headerText="Aqui você pode ver e alterar detalhes da conta e aplicativo."/>
+        <Header userName="Felipe Oliveira" headerText={rt.menu.headertext}/>
         <View style={styles.config}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Atividades criadas</Text>

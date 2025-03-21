@@ -4,9 +4,9 @@ import { HeaderDto } from "./dto/headerDto";
 
 const Header = (data: HeaderDto) => {
 	return (
-		<View>
+		<View style={styles.container}>
 			<View style={styles.header}>
-				<Text>Olá,</Text>
+				<Text style={styles.useractivities}>Olá,</Text>
 				<Text style={styles.username}>{data.userName}</Text>
 			</View>
 			<Text style={styles.useractivities}>{data.headerText}</Text>
@@ -15,9 +15,12 @@ const Header = (data: HeaderDto) => {
 }
 
 const styles = StyleSheet.create({
+	container: {
+		marginBottom: 10
+	},
 	header: {
 		width: '100%',
-		paddingVertical: 30,
+		paddingVertical: 20,
 		flexDirection: 'row',
 		justifyContent: 'center',
 		alignItems: 'center'

@@ -34,15 +34,15 @@ const styles = StyleSheet.create({
 		fontWeight: '600',
 	},
 	description: {
-			fontSize: 11
+			fontSize: 14
 	},
 	author: {
-		fontSize: 11,
+		fontSize: 14,
 		fontWeight: '600',
 		marginTop: 2
 	},
 	status: {
-		fontSize: 11,
+		fontSize: 12,
 		color: 'orange'
 	}
 })

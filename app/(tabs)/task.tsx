@@ -2,16 +2,17 @@ import Header from '@/components/header'
 import InputComponent from '@/components/input'
 import React from 'react'
 import { Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native'
+import rt from '@/assets/json/app-text.json'
 
 const Task = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <Header userName='Felipe Oliveira' headerText='Aqui você cria uma atividade!'/>
-      <InputComponent placeholder='Título da atividade' inputMode='text'/>
-      <InputComponent placeholder='Uma breve descrição da atividade' inputMode='text'/>
+      <Header userName='Felipe Oliveira' headerText={rt.task.headertext}/>
+      <InputComponent placeholder={rt.task.titleTask} inputMode='text'/>
+      <InputComponent placeholder={rt.task.descriptionTask} inputMode='text'/>
       <InputComponent />
       <TouchableOpacity style={[styles.button, styles.logoutButton]}>
-        <Text style={styles.buttonText}>Salvar atividade</Text>
+        <Text style={styles.buttonText}>{rt.task.saveTask}</Text>
       </TouchableOpacity>
     </SafeAreaView>
   )
