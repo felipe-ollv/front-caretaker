@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView contentContainerStyle={{ paddingBottom: 120, flex: 1 }}>
-        <Header />
+        <Header userName="Felipe Oliveira" headerText="Aqui você pode ver e alterar detalhes da conta e aplicativo."/>
         <View style={styles.config}>
           <TouchableOpacity style={styles.button}>
             <Text style={styles.buttonText}>Atividades criadas</Text>

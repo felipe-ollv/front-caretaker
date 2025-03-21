@@ -25,14 +25,14 @@ const Profile = () => {
         <Text style={styles.buttonText}>Relatório de tarefas</Text>
       </TouchableOpacity>
     </View>
-  );
-};
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    justifyContent: 'flex-start',
     alignItems: 'center',
-    justifyContent: 'center',
     paddingHorizontal: 12,
   },
   profileImageCss: {
@@ -77,6 +77,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
   },
-});
+})
 
-export default Profile;
+export default Profile

@@ -1,14 +1,15 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
+import { HeaderDto } from "./dto/headerDto";
 
-const Header = () => {
+const Header = (data: HeaderDto) => {
 	return (
 		<View>
 			<View style={styles.header}>
 				<Text>Olá,</Text>
-				<Text style={styles.username}>Felipe Oliveira</Text>
+				<Text style={styles.username}>{data.userName}</Text>
 			</View>
-			<Text style={styles.useractivities}>Suas atividades para hoje!</Text>
+			<Text style={styles.useractivities}>{data.headerText}</Text>
 		</View>
 	)
 }

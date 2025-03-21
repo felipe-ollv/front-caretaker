@@ -1,15 +1,15 @@
 import { View, StyleSheet, Text } from "react-native"
 
-const Card = () => {
+const Card = ({ data }: any) => {
     return (
 			<View style={styles.card}>
-				<Text style={styles.title}>Título do card</Text>
+				<Text style={styles.title}>{data.title}</Text>
 				<Text style={styles.description}>
-						Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+					{data.description}
 				</Text>
-				<Text style={styles.author}>Criado por: Felipe - 19/03/2025</Text>
-				<Text style={styles.description}>Fazer até 20/03/2025</Text>
-				<Text style={styles.status}>Pendente</Text>
+				<Text style={styles.author}>Criado por: {data.author}- {data.dateCreate}</Text>
+				<Text style={styles.description}>Feito em 20/03/2025</Text>
+				<Text style={styles.status}>{data.status}</Text>
 			</View>
     )
 }
