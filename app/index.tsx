@@ -29,7 +29,35 @@ const cardTaskData = [
     author:"Felipe",
     status:"Pendente",
     dateCreate:"21/03/2025"
-  }
+  },
+  {
+    title:"Levar o lix",
+    description:"Levar o lixo na lixeira em frente ao prédio",
+    author:"Felipe",
+    status:"Pendente",
+    dateCreate:"21/03/2025"
+  },
+  {
+    title:"Levar o li",
+    description:"Levar o lixo na lixeira em frente ao prédio",
+    author:"Felipe",
+    status:"Pendente",
+    dateCreate:"21/03/2025"
+  },
+  {
+    title:"Levar o l",
+    description:"Levar o lixo na lixeira em frente ao prédio",
+    author:"Felipe",
+    status:"Pendente",
+    dateCreate:"21/03/2025"
+  },
+  {
+    title:"Levar o ",
+    description:"Levar o lixo na lixeira em frente ao prédio",
+    author:"Felipe",
+    status:"Pendente",
+    dateCreate:"21/03/2025"
+  },
 ]
 
 const Home = () => {
@@ -39,16 +67,19 @@ const Home = () => {
 
         <FlatList 
           data={cardTaskData}
-          renderItem={({item}) => (
-            <TouchableOpacity
-              onPress={() => console.log("Click Card", item)}
-              activeOpacity={0.9}
-            >
-              <Card data={item} />
-            </TouchableOpacity>
-          )}
+          renderItem={({item, index}) => {
+            const isLastItem = index === cardTaskData.length - 1
+            return (
+              <TouchableOpacity
+                onPress={() => console.log("Click Card", item)}
+                activeOpacity={0.9}
+                style={isLastItem ? styles.lastitem : null}
+              >
+                <Card data={item} />
+              </TouchableOpacity>
+            )
+          }}
           keyExtractor={item => item.title}
-          style={{ paddingBottom: 10}}
         />
       
     </SafeAreaView>
@@ -60,6 +91,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 12,
   },
+  lastitem: {
+    marginBottom: 120
+  }
 })
 
 export default Home

@@ -17,7 +17,7 @@ const Card = ({ data }: any) => {
 const styles = StyleSheet.create({
 	card: {
 		width: '100%',
-		marginTop: 20,
+		marginTop: 10,
 		paddingHorizontal: 12,
 		paddingVertical: 10,
 		gap: 2,
