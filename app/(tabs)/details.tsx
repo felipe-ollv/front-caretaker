@@ -2,16 +2,20 @@ import React from "react"
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native"
 
 import Header from "@/components/header"
+import { useLocalSearchParams } from "expo-router"
 
 const Details = () => {
+
+  const params = useLocalSearchParams()
+
   return (
     <View style={styles.container}>
       <Header userName="Felipe" headerText="Aqui você pode concluir, cancelar ou editar uma atividade!"/>
       <View style={styles.detailcard}>
-        <Text style={styles.tasktitle}>Titulo da atividade</Text>
-        <Text style={{ marginBottom: 10 }}>Descrição da atividade a ser feita</Text>
-        <Text style={{ marginBottom: 10 }}>Quem criou a atividade e data</Text>
-        <Text style={{ marginBottom: 10 }}>Status da atividade</Text>
+        <Text style={styles.tasktitle}>{params.title}</Text>
+        <Text style={{ marginBottom: 10 }}>{params.description}</Text>
+        <Text style={{ marginBottom: 10 }}>Criado por: {params.author} - {params.dateCreate}</Text>
+        <Text style={{ marginBottom: 10 }}>Status: {params.status}</Text>
         <View style={styles.detailbuttons}>
           <TouchableOpacity style={[styles.button, styles.logoutButton]}>
             <Text style={styles.buttontext}>Concluir</Text>

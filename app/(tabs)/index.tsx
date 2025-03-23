@@ -74,7 +74,7 @@ const Home = () => {
             const isLastItem = index === cardTaskData.length - 1
             return (
               <TouchableOpacity
-                onPress={() => router.push('/(tabs)/details')}
+                onPress={() => router.push({pathname: '/(tabs)/details', params: {...item}})}
                 activeOpacity={0.9}
                 style={isLastItem ? styles.lastitem : null}
               >
