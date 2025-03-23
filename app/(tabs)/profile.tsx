@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
   },
   button: {
     width: '100%',
-    padding: 15,
+    padding: 10,
     backgroundColor: '#708090',
     borderRadius: 16,
     alignItems: 'center',
@@ -74,8 +74,8 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontWeight: '300',
   },
 })
 

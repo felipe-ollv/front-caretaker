@@ -7,7 +7,7 @@ const Card = ({ data }: any) => {
 				<Text style={styles.description}>
 					{data.description}
 				</Text>
-				<Text style={styles.author}>Criado por: {data.author}- {data.dateCreate}</Text>
+				<Text style={styles.author}>Criado por: {data.author} - {data.dateCreate}</Text>
 				<Text style={styles.description}>Feito em 20/03/2025</Text>
 				<Text style={styles.status}>{data.status}</Text>
 			</View>
@@ -34,7 +34,8 @@ const styles = StyleSheet.create({
 		fontWeight: '600',
 	},
 	description: {
-			fontSize: 14
+			fontSize: 14,
+			fontWeight: '400'
 	},
 	author: {
 		fontSize: 14,
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
 		marginTop: 2
 	},
 	status: {
-		fontSize: 12,
+		fontSize: 14,
 		color: 'orange'
 	}
 })
