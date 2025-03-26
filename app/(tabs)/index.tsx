@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import Card from "@/components/card"
 import { 
   StyleSheet,
@@ -10,6 +10,7 @@ import Header from "@/components/header"
 import { router } from "expo-router"
 
 import rt from "@/assets/json/app-text.json"
+import Loader from "@/components/loader"
 
 const cardTaskData = [
   {
@@ -64,27 +65,31 @@ const cardTaskData = [
 ]
 
 const Home = () => {
+
+  const [loading, setLoading] = useState(false)
+
   return (
     <SafeAreaView style={styles.container}>
       <Header userName="Felipe Oliveira" headerText={rt.home.headertext}/>
-
-        <FlatList 
-          data={cardTaskData}
-          renderItem={({item, index}) => {
-            const isLastItem = index === cardTaskData.length - 1
-            return (
-              <TouchableOpacity
-                onPress={() => router.push({pathname: '/(tabs)/details', params: {...item}})}
-                activeOpacity={0.9}
-                style={isLastItem ? styles.lastitem : null}
-              >
-                <Card data={item} />
-              </TouchableOpacity>
-            )
-          }}
-          keyExtractor={item => item.title}
-        />
-      
+        {
+          loading ? <Loader /> :
+          <FlatList 
+            data={cardTaskData}
+            renderItem={({item, index}) => {
+              const isLastItem = index === cardTaskData.length - 1
+              return (
+                <TouchableOpacity
+                  onPress={() => router.push({pathname: '/(tabs)/details', params: {...item}})}
+                  activeOpacity={0.9}
+                  style={isLastItem ? styles.lastitem : null}
+                >
+                  <Card data={item} />
+                </TouchableOpacity>
+              )
+            }}
+            keyExtractor={item => item.title}
+          />
+        }
     </SafeAreaView>
   )
 }

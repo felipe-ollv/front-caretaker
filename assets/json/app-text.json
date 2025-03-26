@@ -6,7 +6,8 @@
         "headertext": "Aqui você cria uma atividade!",
         "titleTask": "Título da atividade",
         "descriptionTask": "Uma breve descrição da atividade",
-        "saveTask": "Salvar atividade"
+        "saveTask": "Salvar atividade",
+        "dateplaceholder": "Defina a data da atividade"
     },
     "menu": {
         "headertext": "Aqui você pode ver e alterar detalhes da conta e aplicativo."
