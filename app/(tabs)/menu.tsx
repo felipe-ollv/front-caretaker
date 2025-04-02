@@ -13,19 +13,25 @@ const Menu = () => {
         <Header userName="Felipe Oliveira" headerText={rt.menu.headertext}/>
         <View style={styles.config}>
           <TouchableOpacity style={[ styles.button, styles.layoutbutton ]}>
-            <MaterialCommunityIcons name="book-settings-outline" size={24} color="#737373" />
-            <Text style={styles.buttonText}>Atividades criadas</Text>
-            <SimpleLineIcons name="arrow-right" size={20} color="#737373" />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 10 }}>
+              <MaterialCommunityIcons name="book-settings-outline" size={24} color="#737373" />
+              <Text style={styles.buttonText}>Atividades criadas</Text>
+            </View>
+            <SimpleLineIcons name="arrow-right" size={16} color="#737373" />
           </TouchableOpacity>
           <TouchableOpacity style={[ styles.button, styles.layoutbutton ]}>
-            <MaterialCommunityIcons name="account-circle-outline" size={24} color="#737373" />
-            <Text style={styles.buttonText}>Gerenciar conta</Text>
-            <SimpleLineIcons name="arrow-right" size={20} color="#737373" />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 10 }}>
+              <MaterialCommunityIcons name="account-circle-outline" size={24} color="#737373" />
+              <Text style={styles.buttonText}>Gerenciar conta</Text>
+            </View>
+            <SimpleLineIcons name="arrow-right" size={16} color="#737373" />
           </TouchableOpacity>
           <TouchableOpacity style={[ styles.button, styles.layoutbutton ]}>
-            <AntDesign name="setting" size={24} color="#737373" />
-            <Text style={styles.buttonText}>Configurações</Text>
-            <SimpleLineIcons name="arrow-right" size={20} color="#737373" />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', gap: 10 }}>
+              <AntDesign name="setting" size={24} color="#737373" />
+              <Text style={styles.buttonText}>Configurações</Text>
+            </View>
+            <SimpleLineIcons name="arrow-right" size={16} color="#737373" />
           </TouchableOpacity>
         </View>
       </ScrollView>
@@ -38,10 +44,9 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingHorizontal: 12,
     justifyContent: 'center',
-    alignItems: 'stretch'
+    alignItems: 'stretch',
   },
   config: {
-    width: '100%',
     marginTop: 100,
     gap: 40,
   },

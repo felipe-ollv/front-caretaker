@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import Card from "@/components/card"
 import { 
   StyleSheet,
@@ -12,61 +12,24 @@ import { router } from "expo-router"
 import rt from "@/assets/json/app-text.json"
 import Loader from "@/components/loader"
 
-const cardTaskData = [
-  {
-    title: 'Passear com o pet',
-    description: "Dar uma volta com o Thor na rua",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-  {
-    title:"Levar o lixo",
-    description:"Levar o lixo na lixeira em frente ao prédio",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-  {
-    title:"Ligar para o Gustavo",
-    description:"Chamada de vídeo para ver o filho mais velho",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-  {
-    title:"Levar o lix",
-    description:"Levar o lixo na lixeira em frente ao prédio",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-  {
-    title:"Levar o li",
-    description:"Levar o lixo na lixeira em frente ao prédio",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-  {
-    title:"Levar o l",
-    description:"Levar o lixo na lixeira em frente ao prédio",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-  {
-    title:"Levar o ",
-    description:"Levar o lixo na lixeira em frente ao prédio",
-    author:"Felipe",
-    status:"Pendente",
-    dateCreate:"21/03/2025"
-  },
-]
-
 const Home = () => {
 
-  const [loading, setLoading] = useState(false)
+  const [cardTaskData, setCardTaskData] = useState(Array<any>)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    fetchListTask()
+  }, [])
+
+  const fetchListTask = async () => {
+    const res = await fetch('http://192.168.1.54:3000/home/task-list')
+
+    if (res.ok) {
+      const data = await res.json()
+      setCardTaskData(data)
+      setLoading(false)
+    }
+  }
 
   return (
     <SafeAreaView style={styles.container}>

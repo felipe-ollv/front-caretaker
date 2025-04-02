@@ -2,22 +2,31 @@ import { View, StyleSheet, Text } from "react-native"
 import SimpleLineIcons from '@expo/vector-icons/SimpleLineIcons';
 
 const Card = ({ data }: any) => {
-    return (
-			<View style={styles.card}>
-				<View>
-					<Text style={styles.title}>{data.title}</Text>
-					<Text style={styles.description}>
-						{data.description}
-					</Text>
-					<Text style={styles.author}>Criado por: {data.author} - {data.dateCreate}</Text>
-					<Text style={styles.description}>Feito em 20/03/2025</Text>
-					<Text style={styles.status}>{data.status}</Text>
-				</View>
-				<View style={{ marginRight: 10 }}>
-					<SimpleLineIcons name="arrow-right" size={22} color="#737373" />
-				</View>
+	return (
+		<View style={styles.card}>
+			<View style={{ width: '90%' }}>
+				<Text style={styles.title}>{data.title}</Text>
+				<Text style={styles.description}>
+					{data.description}
+				</Text>
+				<Text style={styles.author}>Criado por: {data.author} - {data.dateCreate}</Text>
+				<Text style={styles.description}>Feito em 20/03/2025</Text>
+				<Text style={[
+					data.status === 'pending' && styles.statuspending,
+					data.status === 'completed' && styles.statuscompleted,
+					data.status === 'canceled' && styles.statuscanceled
+				]}>
+					{
+						data.status === 'pending' ? 'Pendente' : 
+						data.status === 'canceled' ? 'Cancelada' : 'Concluída'
+					}
+				</Text>
 			</View>
-    )
+			<View style={{ width: '6%' }}>
+				<SimpleLineIcons name="arrow-right" size={16} color="#737373" />
+			</View>
+		</View>
+	)
 }
 
 const styles = StyleSheet.create({
@@ -51,9 +60,17 @@ const styles = StyleSheet.create({
 		fontWeight: '600',
 		marginTop: 2
 	},
-	status: {
+	statuspending: {
 		fontSize: 14,
 		color: 'orange'
+	},
+	statuscompleted: {
+		fontSize: 14,
+		color: 'green'
+	},
+	statuscanceled: {
+		fontSize: 14,
+		color: 'red'
 	}
 })
 
